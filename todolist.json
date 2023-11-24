@@ -1,0 +1,73 @@
+{
+  "openapi" : "3.0.3",
+  "info" : {
+    "title": "Todolist Restful API",
+    "version": "1",
+    "description": "OpenAI for todolist Restful API",
+    "termsOfService": "https://github.com/triatmojo",
+    "contact": {
+      "name": "Tri Atmojo",
+      "email": "tatmojo17@gmail.com",
+      "url": "https://github.com/triatmojo"
+    },
+    "license": {
+      "name": "Apache-2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://{environment}.alamkoding.com/api/v1",
+      "description": "Todolist  Restful API Servers",
+      "variables": {
+        "environment" : {
+          "description": "Server Environment",
+          "default": "dev",
+          "enum": [
+            "dev",
+            "qa",
+            "prod"
+          ]
+        }
+      }
+    }
+  ],
+  "externalDocs": {
+    "description": "Youtube Alamkoding",
+    "url": "https://www.youtube.com/c/AlamKoding"
+  },
+  "paths": {
+    "/todolist" : {
+      "get": {
+        "summary": "Get all todolist",
+        "description": "Get all active todolist by default",
+        "responses": {
+
+        }
+      },
+      "post": {
+        "summary": "Create new todolist",
+        "description": "Create new todolist to database",
+        "responses": {
+
+        }
+      }
+    },
+    "/todolist/{todolistId}": {
+      "put": {
+        "summary": "Update todolist",
+        "description": "Update todolist in database",
+        "responses": {
+
+        }
+      },
+      "delete": {
+        "summary": "Delete todolist",
+        "description": "Update todolist in database",
+        "responses": {
+
+        }
+      }
+    }
+  }
+}
