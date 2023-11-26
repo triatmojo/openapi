@@ -63,6 +63,16 @@
               "nullable": true,
               "minLength": 1,
               "maxLength": 100
+            },
+            "examples": {
+              "golang" : {
+                "description": "Example name Golang",
+                "value": "GOLANG"
+              },
+              "php" : {
+                "description": "Example name Php",
+                "value": "PHP"
+              }
             }
           }
         ],
@@ -99,6 +109,30 @@
                       "type": "string",
                       "minLength": 1
                     }
+                  }
+                }
+              },
+              "examples": {
+                "golang" : {
+                  "description": "Example create todolist Golang",
+                  "value": {
+                    "name" : "Golang",
+                    "priority": 1,
+                    "tags" : [
+                      "Golang",
+                      "Programming"
+                    ]
+                  }
+                },
+                "php" : {
+                  "description": "Example create todolist PHP",
+                  "value": {
+                    "name" : "PHP",
+                    "priority": 2,
+                    "tags" : [
+                      "PHP",
+                      "Programming"
+                    ]
                   }
                 }
               }
@@ -152,6 +186,30 @@
                       "type": "string",
                       "minLength": 1
                     }
+                  }
+                }
+              },
+              "examples": {
+                "golang" : {
+                  "description": "Example update todolistId Golang",
+                  "value": {
+                    "name" : "Golang",
+                    "priority": 1,
+                    "tags" : [
+                      "Golang",
+                      "Programming"
+                    ]
+                  }
+                },
+                "php" : {
+                  "description": "Example update todolistId PHP",
+                  "value": {
+                    "name" : "PHP",
+                    "priority": 2,
+                    "tags" : [
+                      "PHP",
+                      "Programming"
+                    ]
                   }
                 }
               }
