@@ -40,7 +40,32 @@
     "/todolist" : {
       "get": {
         "summary": "Get all todolist",
-        "description": "Get all active todolist by default",
+        "description": "Get all todolist by default",
+        "parameters": [
+          {
+            "name": "include_done",
+            "in": "query",
+            "required": false,
+            "description": "Is include todolist by default",
+            "schema": {
+              "type": "boolean",
+              "nullable": true,
+              "default": false
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "description": "Filter todolist by name",
+            "schema": {
+              "type": "string",
+              "nullable": true,
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        ],
         "responses": {
 
         }
@@ -48,6 +73,29 @@
       "post": {
         "summary": "Create new todolist",
         "description": "Create new todolist to database",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json" : {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name" : {
+                    "type": "string",
+                    "minLength": 1,
+                    "required": true
+                  },
+                  "priority" : {
+                    "type": "integer",
+                    "format": "int32",
+                    "required": true,
+                    "default": 1
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses": {
 
         }
@@ -55,15 +103,63 @@
     },
     "/todolist/{todolistId}": {
       "put": {
-        "summary": "Update todolist",
+        "summary": "Update existing todolist",
         "description": "Update todolist in database",
+        "parameters": [
+          {
+            "name": "todolistId",
+            "in": "path",
+            "required": true,
+            "description": "TodolistId for updated",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name" : {
+                    "type": "string",
+                    "minLength": 1,
+                    "required": true
+                  },
+                  "priority" : {
+                    "type": "integer",
+                    "format": "int32",
+                    "required": true,
+                    "default": 1
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses": {
 
         }
       },
       "delete": {
-        "summary": "Delete todolist",
+        "summary": "Delete Existing todolist",
         "description": "Update todolist in database",
+        "parameters": [
+          {
+            "name": "todolistId",
+            "in": "path",
+            "required": true,
+            "description": "TodolistId for deleted",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        ],
         "responses": {
 
         }
